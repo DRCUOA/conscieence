@@ -35,6 +35,10 @@ yarn-error.log*
 .vscode/
 *.sublime-*
 
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+
 # Misc
 *.bak
 *.tmp

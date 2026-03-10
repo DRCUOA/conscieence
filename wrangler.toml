@@ -1,0 +1,17 @@
+name = "conscieence"
+compatibility_date = "2025-04-01"
+
+[assets]
+directory = "./public"
+
+# --- Environments ---
+
+[env.production]
+name = "conscieence"
+routes = [
+  { pattern = "walkinmymind.com", custom_domain = true },
+  { pattern = "www.walkinmymind.com", custom_domain = true }
+]
+
+[env.development]
+name = "conscieence-dev"
