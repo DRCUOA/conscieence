@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>myMind — Private Thought Space</title>
+  <meta name="description" content="myMind is a private software space for capturing, connecting, and exploring your thoughts, memories, ideas, and inner world." />
+
+  <!-- SEO: Canonical, robots, author, theme -->
+  <link rel="canonical" href="https://walkinmymind.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="author" content="myMind" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="myMind" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="myMind — Private Thought Space" />
+  <meta property="og:description" content="myMind is a private software space for capturing, connecting, and exploring your thoughts, memories, ideas, and inner world." />
+  <meta property="og:url" content="https://walkinmymind.com/" />
+  <meta property="og:image" content="https://walkinmymind.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="myMind — Private Thought Space" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="myMind — Private Thought Space" />
+  <meta name="twitter:description" content="myMind is a private software space for capturing, connecting, and exploring your thoughts, memories, ideas, and inner world." />
+  <meta name="twitter:image" content="https://walkinmymind.com/og-image.png" />
+  <meta name="twitter:image:alt" content="myMind — Private Thought Space" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,-apple-system,sans-serif' font-weight='700' font-size='38' fill='%23ff4500'%3Em%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,-apple-system,sans-serif' font-weight='700' font-size='108' fill='%23ff4500'%3Em%3C/text%3E%3C/svg%3E" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "myMind",
+        "url": "https://walkinmymind.com/",
+        "description": "A private software space for capturing, connecting, and exploring your thoughts, memories, ideas, and inner world."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "myMind",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Web",
+        "description": "A private software space for capturing, connecting, and exploring your thoughts, memories, ideas, and inner world — safely, calmly, and in a way that feels natural to you.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "myMind",
+        "url": "https://walkinmymind.com/",
+        "logo": "https://walkinmymind.com/og-image.png"
+      }
+    ]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0a0a0a',
+            panel: '#121212',
+            panel2: '#1b1b1b',
+            soft: '#a3a3a3',
+            accent: 'rgb(255,69,0)'
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(255,255,255,0.06), 0 16px 40px rgba(0,0,0,0.45)',
+            accent: '0 0 0 1px rgba(255,69,0,0.28), 0 12px 34px rgba(255,69,0,0.12)'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(255,69,0,0.10), transparent 20%),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.04), transparent 18%),
+        linear-gradient(180deg, #080808 0%, #0d0d0d 100%);
+    }
+    .section-ring { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06); }
+    .nav-link.active {
+      color: white;
+      background: rgba(255,255,255,0.07);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+    .glass {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(10px);
+    }
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .node-line::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,69,0,0.6), rgba(255,255,255,0.12));
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="text-zinc-100 antialiased selection:bg-orange-600/40 selection:text-white" itemscope itemtype="https://schema.org/WebPage">
+  <div class="min-h-screen">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-black/55 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="#hero" class="flex items-center gap-3">
+          <div class="grid h-10 w-10 place-items-center rounded-2xl bg-accent/15 shadow-accent ring-1 ring-accent/25">
+            <span class="text-lg font-bold tracking-tight text-accent">m</span>
+          </div>
+          <div>
+            <div class="text-sm font-semibold tracking-[0.18em] text-white">myMind</div>
+            <div class="text-[11px] uppercase tracking-[0.2em] text-zinc-400">Private Thought Space</div>
+          </div>
+        </a>
+
+        <nav class="hidden items-center gap-2 md:flex" aria-label="Primary navigation">
+          <a class="nav-link rounded-full px-3 py-2 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white" href="#benefits">Benefits</a>
+          <a class="nav-link rounded-full px-3 py-2 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white" href="#privacy">Privacy</a>
+          <a class="nav-link rounded-full px-3 py-2 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white" href="#vision">Vision</a>
+          <a class="nav-link rounded-full px-3 py-2 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white" href="#how-it-works">How it Works</a>
+          <a class="nav-link rounded-full px-3 py-2 text-sm text-zinc-300 transition hover:bg-white/5 hover:text-white" href="#cta">Start</a>
+        </nav>
+
+        <div class="hidden md:block">
+          <a href="#cta" class="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-black">
+            Start Capturing
+          </a>
+        </div>
+
+        <button id="menuButton" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-200 transition hover:bg-white/10 md:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="hidden border-t border-white/10 bg-black/80 px-4 py-4 md:hidden">
+        <div class="flex flex-col gap-2">
+          <a class="nav-link rounded-xl px-3 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white" href="#benefits">Benefits</a>
+          <a class="nav-link rounded-xl px-3 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white" href="#privacy">Privacy</a>
+          <a class="nav-link rounded-xl px-3 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white" href="#vision">Vision</a>
+          <a class="nav-link rounded-xl px-3 py-3 text-sm text-zinc-300 hover:bg-white/5 hover:text-white" href="#how-it-works">How it Works</a>
+          <a class="mt-2 inline-flex items-center justify-center rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-white" href="#cta">Start Capturing</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero-grid relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30"></div>
+        <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
+          <div class="relative z-10 reveal">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-zinc-300">
+              <span class="inline-block h-2 w-2 rounded-full bg-accent"></span>
+              Safe. Private. Yours.
+            </div>
+
+            <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              See yourself more clearly.<br />
+              <span class="text-zinc-300">Keep what matters.</span><br />
+              <span class="text-accent">Keep becoming.</span>
+            </h1>
+
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
+              myMind is a private software space for capturing, connecting, and exploring your thoughts, memories, ideas, and inner world — safely, calmly, and in a way that feels natural to you.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#cta" class="inline-flex items-center justify-center rounded-2xl bg-accent px-6 py-3.5 text-base font-semibold text-white shadow-accent transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-black">
+                Start Capturing Today
+              </a>
+              <a href="#how-it-works" class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-3.5 text-base font-semibold text-zinc-100 transition hover:bg-white/10">
+                See How It Works
+              </a>
+            </div>
+
+            <div class="mt-10 grid gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div class="text-sm font-medium text-white">Private by design</div>
+                <div class="mt-1 text-sm text-zinc-400">Made for honest thought, not performance.</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div class="text-sm font-medium text-white">Calm exploration</div>
+                <div class="mt-1 text-sm text-zinc-400">Move through ideas in any direction.</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div class="text-sm font-medium text-white">Continuity of self</div>
+                <div class="mt-1 text-sm text-zinc-400">Keep building without losing yourself.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 reveal">
+            <div class="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/7 to-white/[0.03] p-4 shadow-glow">
+              <div class="rounded-[1.75rem] border border-white/10 bg-panel p-4 sm:p-6">
+                <div class="mb-4 flex items-center justify-between">
+                  <div>
+                    <div class="text-sm uppercase tracking-[0.18em] text-zinc-400">Inner World Map</div>
+                    <div class="mt-1 text-xl font-semibold text-white">Thoughts connected over time</div>
+                  </div>
+                  <div class="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">Mock View</div>
+                </div>
+
+                <div class="section-ring relative min-h-[360px] overflow-hidden rounded-[1.5rem] bg-black/50 p-4 sm:min-h-[420px]">
+                  <div class="absolute left-8 top-10 node-line rounded-2xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm text-white shadow-accent">
+                    Early memory
+                  </div>
+                  <div class="absolute left-[42%] top-24 node-line rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-100">
+                    Family thread
+                  </div>
+                  <div class="absolute right-10 top-14 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-100">
+                    Quiet insight
+                  </div>
+                  <div class="absolute left-16 top-[46%] rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-100">
+                    Work in progress
+                  </div>
+                  <div class="absolute left-[48%] top-[54%] rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-100">
+                    Pattern noticed
+                  </div>
+                  <div class="absolute right-14 top-[60%] rounded-2xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm text-white shadow-accent">
+                    Future self
+                  </div>
+                  <div class="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <div class="text-sm font-medium text-white">A calmer way to move through your thinking</div>
+                    <p class="mt-1 text-sm leading-6 text-zinc-400">
+                      Follow threads, revisit old ideas, and discover connections without turning your inner life into another noisy feed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="subheading" class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
+        <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-glow">
+          <p class="max-w-4xl text-xl leading-9 text-zinc-200 sm:text-2xl">
+            Most of us are scattered across notes, tabs, messages, documents, and fading recollection.
+            <span class="text-white">myMind brings those fragments into one private, structured space</span>
+            you can move through in any direction — not as a feed to consume, but as a world to explore.
+          </p>
+        </div>
+      </section>
+
+      <section id="benefits" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="reveal mb-10 max-w-3xl">
+          <div class="text-sm uppercase tracking-[0.2em] text-accent">Benefits</div>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Built to support reflection, continuity, and growth</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <article class="reveal rounded-[1.75rem] border border-white/10 bg-panel p-6 shadow-glow">
+            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/20">
+              <span class="text-xl">01</span>
+            </div>
+            <h3 class="text-xl font-semibold text-white">A calmer way to think</h3>
+            <p class="mt-3 leading-7 text-zinc-400">Not everything should feel like a dashboard, inbox, or stream. myMind is built to feel navigable, human, and quiet.</p>
+          </article>
+
+          <article class="reveal rounded-[1.75rem] border border-white/10 bg-panel p-6 shadow-glow">
+            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/20">
+              <span class="text-xl">02</span>
+            </div>
+            <h3 class="text-xl font-semibold text-white">Your thoughts, kept together</h3>
+            <p class="mt-3 leading-7 text-zinc-400">Ideas, memories, reflections, questions, and fragments brought into one coherent space instead of scattered across disconnected tools.</p>
+          </article>
+
+          <article class="reveal rounded-[1.75rem] border border-white/10 bg-panel p-6 shadow-glow">
+            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/20">
+              <span class="text-xl">03</span>
+            </div>
+            <h3 class="text-xl font-semibold text-white">Explore how your mind moves</h3>
+            <p class="mt-3 leading-7 text-zinc-400">Follow links, go deeper, loop back, and discover patterns over time. Walk through your thinking rather than just storing it.</p>
+          </article>
+
+          <article class="reveal rounded-[1.75rem] border border-white/10 bg-panel p-6 shadow-glow">
+            <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent ring-1 ring-accent/20">
+              <span class="text-xl">04</span>
+            </div>
+            <h3 class="text-xl font-semibold text-white">Stay connected to yourself</h3>
+            <p class="mt-3 leading-7 text-zinc-400">myMind helps preserve continuity — not by freezing you in place, but by helping you carry your past forward as you keep building.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="privacy" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <div class="reveal rounded-[2rem] border border-white/10 bg-panel p-8 shadow-glow sm:p-10">
+            <div class="text-sm uppercase tracking-[0.2em] text-accent">Trust / Privacy</div>
+            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Private by design</h2>
+            <p class="mt-6 max-w-3xl text-lg leading-8 text-zinc-300">
+              Your inner world is not raw material for someone else’s platform. myMind is built around a simple principle:
+              <span class="font-semibold text-white">your thoughts belong to you.</span>
+            </p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div class="font-medium text-white">Captured by you</div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">A personal space should feel safe enough to be honest in.</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div class="font-medium text-white">Organised by you</div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">Your structure, your flow, your way of making sense of your own life.</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div class="font-medium text-white">Explored by you</div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">Move through your thoughts without performative pressure or public visibility.</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div class="font-medium text-white">Kept for you</div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">A quiet, personal place to revisit and reconnect with what matters.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="reveal rounded-[2rem] border border-white/10 bg-gradient-to-br from-accent/10 to-white/[0.03] p-8 shadow-glow">
+            <div class="rounded-[1.5rem] border border-white/10 bg-black/35 p-6">
+              <div class="text-sm uppercase tracking-[0.2em] text-zinc-400">Design intent</div>
+              <ul class="mt-5 space-y-4 text-sm leading-6 text-zinc-300">
+                <li class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">No noisy feed logic</li>
+                <li class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">No public-facing pressure</li>
+                <li class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">No confusion about who this is for</li>
+                <li class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">Built for clarity, continuity, and private reflection</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="vision" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="reveal rounded-[2rem] border border-white/10 bg-panel2 p-8 shadow-glow sm:p-10">
+          <div class="text-sm uppercase tracking-[0.2em] text-accent">More than storage</div>
+          <div class="mt-4 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">A dot on a line can only see a line.</h2>
+              <p class="mt-6 text-lg leading-8 text-zinc-300">
+                We do not think in straight lines. We remember through association, emotion, place, sequence, repetition, contrast, and return. myMind is built around that richer reality.
+              </p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div class="text-lg font-medium text-white">Not just saved</div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">Thoughts remain accessible instead of disappearing into archives.</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div class="text-lg font-medium text-white">Seen</div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">Patterns and themes become easier to notice across time.</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div class="text-lg font-medium text-white">Connected</div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">Ideas can be linked and revisited in a way that feels natural.</p>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div class="text-lg font-medium text-white">Explored</div>
+                <p class="mt-2 text-sm leading-6 text-zinc-400">Your inner world becomes something you can calmly move through.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="reveal mb-10 max-w-3xl">
+          <div class="text-sm uppercase tracking-[0.2em] text-accent">How it works</div>
+          <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">A simple landing-page walkthrough</h2>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="reveal rounded-[1.75rem] border border-white/10 bg-panel p-6 shadow-glow">
+            <div class="text-sm uppercase tracking-[0.2em] text-zinc-400">Step 1</div>
+            <h3 class="mt-3 text-xl font-semibold text-white">Capture</h3>
+            <p class="mt-3 leading-7 text-zinc-400">Add thoughts, memories, fragments, and reflections before they vanish into noise or forgetfulness.</p>
+          </div>
+          <div class="reveal rounded-[1.75rem] border border-white/10 bg-panel p-6 shadow-glow">
+            <div class="text-sm uppercase tracking-[0.2em] text-zinc-400">Step 2</div>
+            <h3 class="mt-3 text-xl font-semibold text-white">Connect</h3>
+            <p class="mt-3 leading-7 text-zinc-400">Link ideas across time, theme, and feeling so your inner world becomes structured rather than scattered.</p>
+          </div>
+          <div class="reveal rounded-[1.75rem] border border-white/10 bg-panel p-6 shadow-glow">
+            <div class="text-sm uppercase tracking-[0.2em] text-zinc-400">Step 3</div>
+            <h3 class="mt-3 text-xl font-semibold text-white">Explore</h3>
+            <p class="mt-3 leading-7 text-zinc-400">Move through your thinking in any direction and revisit what matters without losing momentum.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div class="reveal overflow-hidden rounded-[2rem] border border-accent/20 bg-gradient-to-br from-accent/12 via-white/[0.04] to-white/[0.02] p-8 shadow-accent sm:p-10 lg:p-12">
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <div class="text-sm uppercase tracking-[0.2em] text-accent">Start</div>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                It’s you.<br />
+                All you.<br />
+                <span class="text-zinc-300">In ways you always were, but never fully saw.</span>
+              </h2>
+              <p class="mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
+                Start building a clearer, calmer relationship with your own mind.
+              </p>
+            </div>
+
+            <div class="rounded-[1.75rem] border border-white/10 bg-black/35 p-6">
+              <form id="signupForm" class="space-y-4" novalidate aria-label="Join the early interest list">
+                <label class="block">
+                  <span class="mb-2 block text-sm font-medium text-zinc-200">Email</span>
+                  <input id="emailInput" type="email" name="email" placeholder="you@example.com" autocomplete="email" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/60" />
+                </label>
+                <label class="block">
+                  <span class="mb-2 block text-sm font-medium text-zinc-200">What matters most to you?</span>
+                  <select id="interestSelect" name="interest" class="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/60">
+                    <option value="" class="bg-zinc-900">Choose one</option>
+                    <option value="memory" class="bg-zinc-900">Holding on to memory</option>
+                    <option value="clarity" class="bg-zinc-900">Clarity of thought</option>
+                    <option value="reflection" class="bg-zinc-900">Calmer reflection</option>
+                    <option value="growth" class="bg-zinc-900">Growth without disconnection</option>
+                  </select>
+                </label>
+                <button type="submit" class="inline-flex w-full items-center justify-center rounded-2xl bg-accent px-6 py-3.5 text-base font-semibold text-white transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-black">
+                  Join the Early Interest List
+                </button>
+                <p id="formMessage" class="min-h-[1.5rem] text-sm text-zinc-400"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 bg-black/45">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-zinc-400 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div>
+          <div class="font-semibold tracking-[0.16em] text-white">myMind</div>
+          <div class="mt-1">A private software space for your thoughts, memories, and inner world.</div>
+        </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#hero" class="transition hover:text-white">Top</a>
+          <a href="#privacy" class="transition hover:text-white">Privacy</a>
+          <a href="#cta" class="transition hover:text-white">Start</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = [...document.querySelectorAll('.nav-link')];
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const revealEls = [...document.querySelectorAll('.reveal')];
+    const signupForm = document.getElementById('signupForm');
+    const emailInput = document.getElementById('emailInput');
+    const interestSelect = document.getElementById('interestSelect');
+    const formMessage = document.getElementById('formMessage');
+
+    function toggleMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuButton.setAttribute('aria-expanded', String(isHidden));
+    }
+
+    menuButton?.addEventListener('click', toggleMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          mobileMenu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            link.classList.toggle('active', href === `#${id}`);
+          });
+        }
+      });
+    }, {
+      rootMargin: '-35% 0px -50% 0px',
+      threshold: 0.1
+    });
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    signupForm?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const email = emailInput.value.trim();
+      const interest = interestSelect.value;
+      const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!isValidEmail) {
+        formMessage.textContent = 'Please enter a valid email address.';
+        formMessage.className = 'min-h-[1.5rem] text-sm text-red-300';
+        emailInput.focus();
+        return;
+      }
+
+      if (!interest) {
+        formMessage.textContent = 'Please choose what matters most to you.';
+        formMessage.className = 'min-h-[1.5rem] text-sm text-red-300';
+        interestSelect.focus();
+        return;
+      }
+
+      const submitBtn = signupForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('https://formspree.io/f/mykneoan', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, interest })
+        });
+        if (res.ok) {
+          formMessage.textContent = `Thanks. You’re on the list for updates focused on ${interest}.`;
+          formMessage.className = 'min-h-[1.5rem] text-sm text-emerald-300';
+          signupForm.reset();
+        } else {
+          throw new Error('submission failed');
+        }
+      } catch {
+        formMessage.textContent = 'Something went wrong. Please try again.';
+        formMessage.className = 'min-h-[1.5rem] text-sm text-red-300';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Join the Early Interest List';
+      }
+    });
+  </script>
+</body>
+</html>

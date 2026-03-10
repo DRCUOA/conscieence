@@ -1,0 +1,41 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+*.secret
+credentials*
+*.credentials
+
+# Local history (Cursor / VS Code)
+.history/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Dependencies and build
+node_modules/
+dist/
+build/
+.next/
+out/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE / editor
+.idea/
+.vscode/
+*.sublime-*
+
+# Misc
+*.bak
+*.tmp
+.cache/
