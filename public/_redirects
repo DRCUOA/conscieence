@@ -1,1 +1,2 @@
-https://www.walkinmymind.com/* https://walkinmymind.com/:splat 301
+# Path-based redirects only (relative URLs required by Cloudflare Workers)
+# The www → apex redirect is handled via Cloudflare DNS Redirect Rules
