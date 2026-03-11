@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "wrangler dev --env development",
-    "preview": "wrangler dev --env development --local",
-    "deploy": "wrangler deploy --env production",
-    "deploy:dev": "wrangler deploy --env development"
+    "build:css": "tailwindcss -i src/input.css -o public/styles.css --minify",
+    "build": "npm run build:css",
+    "dev": "npm run build:css && wrangler dev --env development",
+    "preview": "npm run build:css && wrangler dev --env development --local",
+    "deploy": "npm run build && wrangler deploy --env production",
+    "deploy:dev": "npm run build && wrangler deploy --env development"
   },
   "devDependencies": {
+    "tailwindcss": "^3",
     "wrangler": "^4"
   }
 }

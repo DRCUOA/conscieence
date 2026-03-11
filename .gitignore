@@ -35,6 +35,9 @@ yarn-error.log*
 .vscode/
 *.sublime-*
 
+# Generated CSS (built from src/input.css via Tailwind CLI)
+public/styles.css
+
 # Cloudflare / Wrangler
 .wrangler/
 .dev.vars
