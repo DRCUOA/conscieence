@@ -6,6 +6,11 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), versio
 
 ---
 
+## [1.0.2] — 2026-03-11
+
+### Fixed
+- Minor copy typo corrections across landing page
+
 ## [1.0.1] — 2026-03-11
 
 ### Security
